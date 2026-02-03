@@ -2,8 +2,8 @@ import os
 import pytest
 from pathlib import Path
 
-from app.data import create_spark, load_data  # :contentReference[oaicite:1]{index=1}
-from app import queries as q                  # :contentReference[oaicite:2]{index=2}
+from Backend.app.data import create_spark, load_data  # :contentReference[oaicite:1]{index=1}
+from Backend.app import queries as q                  # :contentReference[oaicite:2]{index=2}
 
 
 # -----------------------
@@ -99,7 +99,7 @@ def test_api_health_works(data_bundle, monkeypatch):
     e poi patcha 'data' con il nostro DataBundle già caricato.
     """
     from fastapi.testclient import TestClient
-    import app.api as api_mod  # :contentReference[oaicite:7]{index=7}
+    from Backend import app as api_mod
 
     # patcha data globale usata dagli endpoint
     monkeypatch.setattr(api_mod, "data", data_bundle, raising=True)
@@ -112,7 +112,7 @@ def test_api_health_works(data_bundle, monkeypatch):
 
 def test_api_top_products(data_bundle, monkeypatch):
     from fastapi.testclient import TestClient
-    import app.api as api_mod  # :contentReference[oaicite:8]{index=8}
+    from Backend import app as api_mod
 
     monkeypatch.setattr(api_mod, "data", data_bundle, raising=True)
 
