@@ -4,8 +4,8 @@ from pyspark.sql.functions import col
 
 from pathlib import Path
 from fastapi import FastAPI, Query
-from Backend.app.data import create_spark, load_data
-from Backend.app import queries as q
+from app.data import create_spark, load_data
+from app import queries as q
 import time
 from starlette.requests import Request
 
