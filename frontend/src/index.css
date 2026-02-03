@@ -1,0 +1,26 @@
+/* Reset minimale: lascia gestire il tema a styles.css */
+:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+/* Importantissimo: niente layout centrato da template */
+#root {
+  width: 100%;
+  height: 100%;
+}
